@@ -1,0 +1,1 @@
+export { default as logofb} from '../svgs/logofb.svg'

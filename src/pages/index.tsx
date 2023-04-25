@@ -2,13 +2,18 @@ import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 import { useSession } from "next-auth/react";
+import { Signin} from "../components/Sign-in";
 
 import { api, type RouterOutputs } from "../utils/api";
-import { Header } from "../components/Header";
+import { Header} from "../components/Header";
+import { Footer} from "../components/Footer";
+import { Signup } from "~/components/Sign-up";
+
 // import { NoteEditor } from "../components/NoteEditor";
 // import { NoteCard } from "../components/NoteCard";
 
 const Home: NextPage = () => {
+  const hello = api.example.hello.useQuery({ text: "from tRPC" });
   return (
     <>
       <Head>
@@ -18,11 +23,13 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Header />
-        {/* <Content /> */}
-        <button className="btn">Hello daisyUI</button>
+        
+        <Signup/>
+        <Footer/>
       </main>
-    </>
+
+    </> 
   );
 };
-
 export default Home;
+
